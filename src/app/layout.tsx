@@ -7,15 +7,20 @@ import { Footer } from './components'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Coming soon',
-  description: 'This page is under construction.',
-  authors: [{ name: 'Lusa' }],
+  title: "Lusa.digital — Sistem Otomatis Bisnis Premium",
+  description:
+    "Lusa.digital bukan template. Ini sistem modular siap jalan 24 jam tanpa ribet untuk bisnis premium yang ingin terlihat profesional & terpercaya.",
+  authors: [{ name: "Lusa" }],
   openGraph: {
-    title: 'Lusa - Developer & Creator',
-    locale: 'id',
-    type: 'website',
+    title: "Lusa.digital — Sistem Otomatis Bisnis Premium",
+    description: "Kami tidak menjual website. Kami membangun sistem yang bekerja otomatis untuk reputasi & omzet Anda.",
+    locale: "id_ID",
+    type: "website",
+    url: "https://lusa.digital",
+    siteName: "Lusa.digital",
   },
-}
+};
+
 
 export default function RootLayout({
   children,
