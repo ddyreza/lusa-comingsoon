@@ -37,23 +37,7 @@ export default function Home() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return (
-      <section className="relative min-h-screen section-padding bg-gradient-light overflow-hidden">
-        <div className="container-custom">
-          <div className="text-center max-w-4xl mx-auto min-h-screen flex flex-col justify-center">
-            <Wand2 className="w-20 h-20 text-primary-pink mx-auto animate-bounce-gentle mb-8" />
-            <h1 className="text-3xl lg:text-5xl font-bold gradient-text leading-tight mb-6">
-              Coming Soon
-            </h1>
-            <p className="text-lg lg:text-xl text-text-gray leading-relaxed font-light max-w-2xl mx-auto">
-              Cooking something fun — check back in a bit ✨
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  if (!mounted) return null;
 
   return (
     <main className="relative min-h-screen section-padding bg-gradient-light dark:bg-gradient-dark overflow-hidden">
