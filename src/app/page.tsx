@@ -132,7 +132,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-3xl lg:text-5xl font-bold gradient-text text-shadow mb-6"
+            className="text-3xl lg:text-5xl font-bold gradient-text text-shadow mb-6 leading-tight"
           >
             Lusa.digital is not live — but the system already works.
           </motion.h1>
