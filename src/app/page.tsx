@@ -218,6 +218,8 @@ export default function Home() {
           konversi — dalam satu paket otomatis.
         </motion.p>
       </div>
+
+      
     </main>
   );
 }
