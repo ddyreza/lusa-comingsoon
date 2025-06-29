@@ -37,26 +37,11 @@ export default function Home() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return (
-      <section className="relative min-h-screen section-padding bg-gradient-light overflow-hidden">
-        <div className="container-custom">
-          <div className="text-center max-w-4xl mx-auto min-h-screen flex flex-col justify-center">
-            <Wand2 className="w-20 h-20 text-primary-pink mx-auto animate-bounce-gentle mb-8" />
-            <h1 className="text-3xl lg:text-5xl font-bold gradient-text leading-tight mb-6">
-              Coming Soon
-            </h1>
-            <p className="text-lg lg:text-xl text-text-gray leading-relaxed font-light max-w-2xl mx-auto">
-              Cooking something fun — check back in a bit ✨
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  if (!mounted) return null;
 
   return (
     <main className="relative min-h-screen section-padding bg-gradient-light dark:bg-gradient-dark overflow-hidden">
+      {/* Background Animation */}
       <div className="absolute inset-0 -z-10">
         <motion.div
           animate={{ x: [0, 100, 0], y: [0, -80, 0] }}
@@ -81,6 +66,7 @@ export default function Home() {
         />
       </div>
 
+      {/* Main Content */}
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -88,6 +74,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto min-h-screen flex flex-col justify-center"
         >
+          {/* Sparkle Icon */}
           <motion.div
             variants={floatVariant}
             animate="float"
@@ -96,6 +83,7 @@ export default function Home() {
             <Sparkles className="w-6 h-6 text-primary-pink/40" />
           </motion.div>
 
+          {/* Icon + Glow */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -128,6 +116,7 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
+          {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -148,30 +137,55 @@ export default function Home() {
             paham teknologi.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
-            className="mb-16"
-          >
-            <div className="inline-flex flex-col sm:flex-row items-center gap-2 glass rounded-full px-6 py-3 border border-pink-100 dark:border-pink-500/20 shadow-soft text-sm text-center">
-              <div className="animate-pulse">✨</div>
-              <span className="text-text-gray/80 dark:text-gray-400 font-medium">
-                Akses publik belum dibuka. <br className="sm:hidden" />
-                Versi private sudah bisa Anda pakai hari ini.
-              </span>
-            </div>
-          </motion.div>
-
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4, duration: 0.8 }}
-            className="mb-12"
+            transition={{ delay: 1, duration: 0.8 }}
+            className="mb-6"
           >
-            <h2 className="text-base lg:text-lg font-semibold gradient-text mb-4">
-              Ingin jadi salah satu bisnis pertama yang pakai sistem ini?
-            </h2>
+            <div className="inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm text-white backdrop-blur-md shadow-sm dark:bg-white/5">
+              🚀 Early Access Terbatas — Batch Pertama Dibuka Juli 2025
+            </div>
+          </motion.div>
+
+          {/* Form */}
+          <motion.form
+            action="https://formsubmit.co/halo@lusa.digital"
+            method="POST"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.4, duration: 0.8 }}
+            className="w-full max-w-md mx-auto space-y-4"
+          >
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://lusa.digital/success"
+            />
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Masukkan email aktif Anda"
+              className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-pink"
+            />
+            <button
+              type="submit"
+              className="w-full btn-primary bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition"
+            >
+              Daftar Waiting List
+            </button>
+          </motion.form>
+
+          {/* Social */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.2, duration: 0.8 }}
+            className="mt-12"
+          >
             <div className="flex justify-center gap-4 flex-wrap">
               {socialLinks.map(({ icon: Icon, href, label }, index) => (
                 <motion.a
@@ -182,7 +196,7 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0, y: 50 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{
-                    delay: 1.8 + index * 0.1,
+                    delay: 2.4 + index * 0.1,
                     duration: 0.5,
                     type: "spring",
                     bounce: 0.5,
@@ -203,8 +217,8 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2.2, duration: 0.8 }}
-            className="text-xs text-text-gray/60 dark:text-gray-500 font-light"
+            transition={{ delay: 2.8, duration: 0.8 }}
+            className="mt-12 text-xs text-text-gray/60 dark:text-gray-500 font-light"
           >
             Bukan sekadar tampilan. Kami bangun sistem reputasi, operasional,
             dan konversi — dalam satu paket otomatis.
