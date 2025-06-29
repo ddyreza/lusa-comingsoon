@@ -144,8 +144,14 @@ export default function Home() {
             transition={{ delay: 1, duration: 0.8 }}
             className="mb-6"
           >
-            <div className="inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm text-white backdrop-blur-md shadow-sm dark:bg-white/5">
-              🚀 Early Access Terbatas — Batch Pertama Dibuka Juli 2025
+            <div
+              className="inline-block rounded-full 
+  bg-white/50 dark:bg-white/10 
+  px-5 py-2.5 text-sm 
+  text-gray-800 dark:text-white 
+  backdrop-blur-md shadow-sm"
+            >
+              🚀 Early Access Terbatas — Batch Pertama Dibuka Agustus 2025
             </div>
           </motion.div>
 
@@ -156,7 +162,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4, duration: 0.8 }}
-            className="w-full max-w-md mx-auto space-y-4"
+            className="w-full max-w-md mx-auto"
           >
             <input type="hidden" name="_captcha" value="false" />
             <input
@@ -164,19 +170,25 @@ export default function Home() {
               name="_next"
               value="https://lusa.digital/success"
             />
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Masukkan email aktif Anda"
-              className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-pink"
-            />
-            <button
-              type="submit"
-              className="w-full btn-primary bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition"
-            >
-              Daftar Waiting List
-            </button>
+
+            <div className="flex flex-col sm:flex-row items-center gap-2">
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Masukkan email aktif Anda"
+                className="flex-1 px-4 py-3 rounded-full border bg-white text-gray-800 placeholder-gray-500
+        dark:bg-white/5 dark:text-white dark:placeholder-gray-400
+        border-gray-300 dark:border-white/10
+        focus:outline-none focus:ring-2 focus:ring-primary-pink transition w-full"
+              />
+              <button
+                type="submit"
+                className="rounded-full px-6 py-3 font-medium text-sm bg-black text-white dark:bg-white dark:text-black shadow hover:opacity-90 transition whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
           </motion.form>
 
           {/* Social */}
