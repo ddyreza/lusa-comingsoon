@@ -18,7 +18,7 @@ export const socialLinks = [
   },
   {
     icon: FaInstagram,
-    href: "https://instagram.com/lusa.digital",
+    href: "https://instagram.com/dedyreyzaldi",
     label: "Instagram",
   },
   {
